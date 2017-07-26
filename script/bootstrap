@@ -5,6 +5,9 @@ function main {
   source "$shome/script/profile"
 
   block compile yarn
+
+  mkdir -p "$shome/bin"
+  ln -nfs ../node_modules/.bin/dnsimple "$shome/bin/"
 }
 
 main "$@"

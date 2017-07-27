@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function main {
+  curl -s "https://api.dnsimple.com/v2/${DNSIMPLE_ACCOUNT}/$*" -H "Accepts: application/json" -K <(echo '-H "Authorization: Bearer ${DNSIMPLE_TOKEN}"' | envsubst '$DNSIMPLE_TOKEN') | jq .
+}
+
+main "$@"
